@@ -13,24 +13,93 @@ import Image from 'next/image'
 
 export default function Home() {
   const industries = [
-    'Med Spas',
+    'Med Spas + Salons',
     'Clinics',
-    'Salons',
     'HVAC & Home Services',
-    'Real Estate Teams',
     'Fitness Clubs',
     'Automotive Shops',
     'Law Firms',
-    'Tutoring & Education',
     'Photographers / Event Services',
   ]
 
   return (
-    <main className="bg-black dark:bg-black text-white">
+    <main className="bg-[#E6E8E6] text-[#1C1C1C]">
       <SplashScreen />
       <Header />
 
       <Hero />
+
+      {/* Get Started / Google Form - placed immediately after the hero for prominence */}
+      <SectionWrapper id="get-started" className="bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+          </div>
+          <div className="flex justify-center">
+            <div className="w-full max-w-3xl shadow-lg rounded-lg overflow-hidden">
+              {/* DO NOT MODIFY THE IFRAME CONTENT */}
+              <div className="w-full">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGj4VQVHRyqAO2p_k4AF0QjJyqcTAO5lV-4QXSysMKeW_kkQ/viewform?embedded=true" width="100%" height="1360" frameBorder="0" marginHeight={0} marginWidth={0}>Loading…</iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Section 9 - Our Process */}
+      <SectionWrapper id="process" className="bg-black dark:bg-black">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+            How We Transform Your Business in 3 Steps
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {[
+            {
+              step: '1',
+              title: 'Operational Audit',
+              description: 'Identify bottlenecks, leakage, inefficiencies.',
+            },
+            {
+              step: '2',
+              title: 'AI System Design',
+              description: 'Architect the exact agents needed.',
+            },
+            {
+              step: '3',
+              title: 'Deployment & Optimization',
+              description: 'Integrate, test, refine, monitor.',
+            },
+          ].map((process, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+              className="bg-gray-900 dark:bg-gray-800 rounded-xl p-8 text-center"
+            >
+              <div className="w-16 h-16 bg-[#3772FF] rounded-full flex items-center justify-center text-[#1C1C1C] text-2xl font-bold mx-auto mb-6">
+                {process.step}
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">{process.title}</h3>
+              <p className="text-gray-300">{process.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <CTAButton href="#contact" variant="primary">
+            Start Your Automation Audit
+          </CTAButton>
+        </div>
+      </SectionWrapper>
 
       {/* Section 2 - Who We Are */}
       <SectionWrapper id="who-we-are" className="bg-gray-900 dark:bg-gray-900">
@@ -45,7 +114,7 @@ export default function Home() {
               Your AI Systems Architect & Automation Partner
             </h2>
             <div className="space-y-4 text-lg text-gray-300">
-              <p className="font-semibold text-xl text-[#00FF7F] mb-4">We don't sell "bots."</p>
+              <p className="font-semibold text-xl text-[#3772FF] mb-4">We don't sell "bots."</p>
               <p className="mb-4">We build intelligent operational systems that:</p>
               <ul className="space-y-3 ml-6">
                 {[
@@ -57,7 +126,7 @@ export default function Home() {
                   'Increase revenue while you sleep',
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start">
-                    <svg className="w-6 h-6 text-[#00FF7F] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#3772FF] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span>{item}</span>
@@ -93,27 +162,27 @@ export default function Home() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            The 4 Core AI Agents Every SMB Needs
+            The 3 Core AI Agents Every SMB Needs
           </h2>
-          <h3 className="text-2xl lg:text-3xl text-[#00FF7F] mb-4">Your Starter Automation Stack</h3>
+          <h3 className="text-2xl lg:text-3xl text-[#3772FF] mb-4">Your Starter Automation Stack</h3>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            These four agents replace manual labor, stop revenue leakage, and create always-on coverage for your business.
+            These three agents replace manual labor, stop revenue leakage, and create always-on coverage for your business.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
+            // {
+            //   title: 'Lead Generation Agent',
+            //   description: 'Captures, qualifies, and routes leads instantly.',
+            //   benefit: '→ More revenue, less human follow-up.',
+            //   icon: '🚀',
+            // },
             {
-              title: 'Lead Generation Agent',
-              description: 'Captures, qualifies, and routes leads instantly.',
-              benefit: '→ More revenue, less human follow-up.',
-              icon: '🚀',
-            },
-            {
-              title: 'Phone Agent',
+              title: 'Messaging Agent',
               description: 'Answers calls 24/7, books appointments, handles FAQs.',
               benefit: '→ Never miss another opportunity.',
-              icon: '📞',
+              icon: '💬',
             },
             {
               title: 'Email Agent',
@@ -148,7 +217,7 @@ export default function Home() {
                 <div className="text-4xl mb-4">{agent.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-2">{agent.title}</h3>
                 <p className="text-gray-300 mb-3">{agent.description}</p>
-                <p className="text-[#00FF7F] font-semibold">{agent.benefit}</p>
+                <p className="text-[#3772FF] font-semibold">{agent.benefit}</p>
               </div>
             </motion.div>
           ))}
@@ -204,7 +273,7 @@ export default function Home() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           <TierCard
             title="Tier 1 — Automation Starter"
             description="For small service businesses or solo owners."
@@ -230,7 +299,7 @@ export default function Home() {
             ]}
             index={1}
           />
-          <TierCard
+          {/* <TierCard
             title="Tier 3 — AI COO"
             description="A fully modernized AI-driven operations layer."
             features={[
@@ -241,7 +310,7 @@ export default function Home() {
               'Internal workflow modernization',
             ]}
             index={2}
-          />
+          /> */}
         </div>
 
         <motion.div
@@ -302,7 +371,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-[#00FF7F]/20 to-[#3B82F6]/20 rounded-xl p-8 lg:p-12"
+            className="bg-gradient-to-br from-[#3772FF]/20 to-[#3772FF]/20 rounded-xl p-8 lg:p-12"
           >
             <h3 className="text-3xl font-bold text-white mb-6">AI becomes:</h3>
             <div className="space-y-4">
@@ -319,7 +388,7 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: idx * 0.15 }}
                   className="flex items-start"
                 >
-                  <svg className="w-6 h-6 text-[#00FF7F] mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-[#3772FF] mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                   <span className="text-xl text-white font-semibold">{item}</span>
@@ -327,6 +396,40 @@ export default function Home() {
               ))}
             </div>
           </motion.div>
+        </div>
+      </SectionWrapper>
+      {/* Services Section - focused 4-card grid */}
+      <SectionWrapper id="services" className="bg-black dark:bg-black">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8"
+        >
+          <h2 className="text-3xl lg:text-4xl font-bebas font-bold text-[#262E40] mb-2">Services We Provide</h2>
+          <p className="text-[#3772FF] max-w-2xl mx-auto">Core services tailored for high-volume service businesses.</p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {[
+            { title: 'Photography', description: 'Event, commercial, and product photography workflows.' },
+            { title: 'Tutoring', description: 'Scheduling, lead capture, and student management.' },
+            { title: 'Med Spas / Salons', description: 'Booking, follow-ups, and client retention automations.' },
+            { title: 'Clinics', description: 'Patient intake, appointment reminders, and follow-up care.' },
+          ].map((s, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: idx * 0.06 }}
+              className="bg-gray-900 dark:bg-gray-800 rounded-lg p-6 text-center shadow-md border border-gray-800"
+            >
+              <h3 className="text-xl font-bold text-white mb-2">{s.title}</h3>
+              <p className="text-[#3772FF]">{s.description}</p>
+            </motion.div>
+          ))}
         </div>
       </SectionWrapper>
 
@@ -352,7 +455,7 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="bg-gray-900 dark:bg-gray-800 rounded-lg p-6 text-center hover:bg-gray-800 transition-colors border border-gray-800 hover:border-[#00FF7F]/50"
+              className="bg-gray-900 dark:bg-gray-800 rounded-lg p-6 text-center hover:bg-gray-800 transition-colors border border-gray-800 hover:border-[#3772FF]/50"
             >
               <div className="text-3xl mb-3">🏢</div>
               <p className="text-white font-semibold">{industry}</p>
@@ -418,61 +521,7 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
-      {/* Section 9 - Our Process */}
-      <SectionWrapper id="process" className="bg-black dark:bg-black">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            How We Transform Your Business in 3 Steps
-          </h2>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {[
-            {
-              step: '1',
-              title: 'Operational Audit',
-              description: 'Identify bottlenecks, leakage, inefficiencies.',
-            },
-            {
-              step: '2',
-              title: 'AI System Design',
-              description: 'Architect the exact agents needed.',
-            },
-            {
-              step: '3',
-              title: 'Deployment & Optimization',
-              description: 'Integrate, test, refine, monitor.',
-            },
-          ].map((process, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.2 }}
-              className="bg-gray-900 dark:bg-gray-800 rounded-xl p-8 text-center"
-            >
-              <div className="w-16 h-16 bg-[#00FF7F] rounded-full flex items-center justify-center text-black text-2xl font-bold mx-auto mb-6">
-                {process.step}
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">{process.title}</h3>
-              <p className="text-gray-300">{process.description}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="text-center">
-          <CTAButton href="#contact" variant="primary">
-            Start Your Automation Audit
-          </CTAButton>
-        </div>
-      </SectionWrapper>
+      
 
       {/* Section 10 - Full CTA Section */}
       <SectionWrapper id="contact" className="bg-gradient-to-br from-gray-900 to-black dark:from-gray-900 dark:to-black">
@@ -497,7 +546,7 @@ export default function Home() {
               href="tel:+13057534014"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 rounded-lg font-semibold text-lg border-2 border-[#00FF7F] text-[#00FF7F] hover:bg-[#00FF7F] hover:text-black transition-colors inline-block text-center"
+              className="px-8 py-4 rounded-lg font-semibold text-lg border-2 border-[#262E40] text-[#262E40] hover:bg-[#3772FF] hover:text-[#1C1C1C] transition-colors inline-block text-center"
             >
               Call Us: (305) 753-4014
             </motion.a>
@@ -517,41 +566,13 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Contact Form */}
-            <div>
-              <h3 className="text-xl font-bold text-white mb-4">Get In Touch</h3>
-              <form className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#00FF7F] transition-colors"
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#00FF7F] transition-colors"
-                />
-                <textarea
-                  placeholder="Message"
-                  rows={4}
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#00FF7F] transition-colors"
-                />
-                <button
-                  type="submit"
-                  className="w-full px-6 py-3 bg-[#3B82F6] text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-
             {/* Contact Info */}
             <div>
               <h3 className="text-xl font-bold text-white mb-4">Contact</h3>
               <div className="space-y-4">
                 <a
                   href="tel:+13057534014"
-                  className="block text-gray-300 hover:text-[#00FF7F] transition-colors"
+                  className="block text-gray-300 hover:text-[#3772FF] transition-colors"
                 >
                   Phone: (305) 753-4014
                 </a>

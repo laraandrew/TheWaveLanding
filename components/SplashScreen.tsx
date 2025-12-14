@@ -33,7 +33,7 @@ export function SplashScreen() {
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-            className="h-4 w-4 rounded-full bg-[#00FF7F]"
+            className="h-4 w-4 rounded-full bg-[#3772FF]"
           />
         </motion.div>
       )}

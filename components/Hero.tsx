@@ -6,18 +6,19 @@ import { CTAButton } from './CTAButton'
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 lg:pt-24 bg-black dark:bg-black">
+    <section className="min-h-[55vh] flex items-center justify-center py-12 bg-black dark:bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="mb-2 font-bebas text-lg text-[#262E40]">How to transform your business</div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
               Modernize Your Business With AI Agents That Work{' '}
-              <span className="text-[#00FF7F]">24/7</span>
+              <span className="text-[#3772FF]">24/7</span>
             </h1>
             <p className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed">
               We help small and medium-sized businesses eliminate bottlenecks, reduce labor costs, capture more leads, and automate operations with intelligent AI systems.
@@ -30,7 +31,7 @@ export function Hero() {
                 href="tel:+13057534014"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 rounded-lg font-semibold text-lg border-2 border-[#00FF7F] text-[#00FF7F] hover:bg-[#00FF7F] hover:text-black transition-colors inline-block text-center"
+                className="px-8 py-4 rounded-lg font-semibold text-lg border-2 border-[#262E40] text-[#262E40] hover:bg-[#3772FF] hover:text-[#1C1C1C] transition-colors inline-block text-center"
               >
                 Call Us: (305) 753-4014
               </motion.a>

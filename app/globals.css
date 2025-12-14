@@ -2,18 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap');
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 17, 24, 39;
+  --color-white-bg: #E6E8E6; /* page background */
+  --color-body-text: #1C1C1C; /* main body text */
+  --color-heading: #262E40; /* headings / emphasis */
+  --color-accent: #3772FF; /* secondary / accents */
 }
 
+/* Base page styles following the design system */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--color-white-bg);
+  color: var(--color-body-text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings use Bebas Neue and dark blue */
+h1, h2, h3, h4 {
+  color: var(--color-heading);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* Ensure headings that were given utility classes like text-white still render in the heading color */
+h1.text-white, h2.text-white, h3.text-white, h4.text-white {
+  color: var(--color-heading) !important;
+}
+
+/* Map common dark background utilities to the new light page background so layout remains consistent without modifying many templates */
+.bg-black, .dark .bg-black, .bg-gray-900, .bg-gray-800 {
+  background-color: var(--color-white-bg) !important;
+}
+
+/* Map text-white utility to the main body text color by default (most components used text-white)
+   Heading overrides above ensure headings keep the heading color */
+.text-white {
+  color: var(--color-body-text) !important;
+}
+
+/* Secondary/low-priority text should use the accent light blue */
+.text-gray-300, .text-gray-400, .text-gray-500, .placeholder-gray-400 {
+  color: var(--color-accent) !important;
+}
+
+/* Border adjustments to keep subtle separation on light backgrounds */
+.border-gray-800 {
+  border-color: rgba(38,46,64,0.08) !important;
+}
+
+/* Small utility: ensure buttons and nav use BebasNeue where appropriate */
+.font-bebas, .bebas {
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 @layer utilities {

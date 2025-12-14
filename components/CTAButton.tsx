@@ -18,10 +18,10 @@ export function CTAButton({
   onClick,
   className = '' 
 }: CTAButtonProps) {
-  const baseClasses = 'px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-block text-center'
-  const variantClasses = variant === 'primary' 
-    ? 'bg-[#3B82F6] text-white hover:bg-blue-600' 
-    : 'bg-transparent border-2 border-[#00FF7F] text-[#00FF7F] hover:bg-[#00FF7F] hover:text-black'
+  const baseClasses = 'px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-block text-center font-bebas'
+  const variantClasses = variant === 'primary'
+    ? 'bg-[#262E40] text-[#E6E8E6] hover:bg-[#3772FF] hover:text-[#E6E8E6]'
+    : 'bg-transparent border-2 border-[#262E40] text-[#262E40] hover:bg-[#3772FF] hover:text-[#1C1C1C]'
 
   const buttonContent = (
     <motion.div

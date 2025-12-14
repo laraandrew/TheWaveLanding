@@ -19,11 +19,11 @@ export function Header() {
             transition={{ duration: 0.5 }}
             className="flex-shrink-0"
           >
-            <div className="text-2xl font-bold text-white">AI Automate</div>
+            <div className="text-2xl font-bold text-white font-bebas">AI Automate</div>
           </motion.div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 font-bebas">
             <a href="#who-we-are" className="text-gray-300 hover:text-white transition-colors">
               About
             </a>
@@ -59,14 +59,14 @@ export function Header() {
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2.5 bg-[#3B82F6] text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors"
+              className="px-6 py-2.5 bg-[#262E40] text-[#E6E8E6] rounded-lg font-semibold hover:bg-[#3772FF] transition-colors"
             >
               Book Your Audit
             </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-4 font-bebas">
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
@@ -120,7 +120,7 @@ export function Header() {
             </a>
             <a
               href="#contact"
-              className="block px-6 py-2.5 bg-[#3B82F6] text-white rounded-lg font-semibold text-center hover:bg-blue-600 transition-colors"
+              className="block px-6 py-2.5 bg-[#262E40] text-[#E6E8E6] rounded-lg font-semibold text-center hover:bg-[#3772FF] transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Book Your Audit

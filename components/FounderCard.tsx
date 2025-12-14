@@ -21,7 +21,7 @@ export function FounderCard({ name, title, image, bio, index }: FounderCardProps
       className="bg-gray-900 dark:bg-gray-800 rounded-xl p-6 lg:p-8 shadow-lg"
     >
       <div className="flex flex-col items-center text-center">
-        <div className="relative w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-6 ring-4 ring-[#00FF7F]/20">
+        <div className="relative w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-6 ring-4 ring-[#3772FF]/20">
           <Image
             src={image}
             alt={name}
@@ -30,7 +30,7 @@ export function FounderCard({ name, title, image, bio, index }: FounderCardProps
           />
         </div>
         <h3 className="text-2xl font-bold text-white mb-2">{name}</h3>
-        <p className="text-[#00FF7F] mb-4 font-semibold">{title}</p>
+        <p className="text-[#3772FF] mb-4 font-semibold">{title}</p>
         <p className="text-gray-300 leading-relaxed">{bio}</p>
       </div>
     </motion.div>
