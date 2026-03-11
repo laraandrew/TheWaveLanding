@@ -52,6 +52,16 @@ npm run dev
 - Accents: Green (#00FF7F)
 - Buttons: Blue (#3B82F6)
 
+
+## Release Readiness
+
+This project is now tracked for release hardening using two standards:
+
+- UX/usability improvements (mobile, CTA clarity, section readability)
+- Accessibility basics (semantic CTA controls, visible keyboard focus states)
+
+For roadmap and execution order, see [PLANS.md](PLANS.md).
+
 ## Build
 
 ```bash
